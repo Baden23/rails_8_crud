@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
   resources :posts #, only: [:show, :edit, :update, :destroy, :new]
-  resource :session
+  resource :session, only: [:new, :create, :destroy]
   resources :passwords, param: :token
   
   delete 'sign_out', to: 'sessions#destroy', as: 'sign_out'
-  
+
   root 'posts#index'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

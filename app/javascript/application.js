@@ -1,15 +1,13 @@
-// Import Turbo (for handling Turbo links)
+// import Rails from "@rails/ujs"
+// Rails.start()
 import "@hotwired/turbo-rails"
-
-// Import Stimulus controllers
-import "controllers"
-
-// Import Stimulus for the front-end framework
 import { Application } from "@hotwired/stimulus"
-const application = Application.start()
+import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
 
-// Configure Stimulus
+const application = Application.start()
 application.debug = false
 window.Stimulus = application
+
+eagerLoadControllersFrom("controllers", application)
 
 export { application }
