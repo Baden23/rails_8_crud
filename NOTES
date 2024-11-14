@@ -1,0 +1,7 @@
+## GITHUB BRANCH WORKFLOW ##
+
+1. Create a branch: git checkout -b feature-branch.
+2. Make changes and commit: git add . / git commit -m "Message".
+3. Push the branch to GitHub: git push -u origin feature-branch.
+4. Merge into main when done: git checkout master / git pull origin main /git merge feature-branch / git push origin master
+5. Optionally delete the branch after merging: git branch -d feature-branch / git push origin --delete feature-branch
