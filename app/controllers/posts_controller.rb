@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   # GET /posts/:id
   def show
+    @post = Post.friendly.find(params[:id])
   end
 
   # GET /posts/new
@@ -50,7 +51,7 @@ class PostsController < ApplicationController
 
   # Find post by id for actions that need it
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   # Strong parameters to whitelist fields
