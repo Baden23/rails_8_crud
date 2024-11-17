@@ -1,0 +1,69 @@
+
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #e0e0e0; /* Optional background color */
+    }
+
+    .flexbox {
+      width: 50%;
+      padding: 20px;
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional styling */
+    }
+
+    p {
+      position: relative;
+      font-size: 16px;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+
+    /* First layer - Coral Blue */
+    p::before,
+    p::after,
+    p::nth-of-type(2)::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(52, 152, 219, 0.5); /* Coral Blue with opacity 0.5 */
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 80%);
+      z-index: -3;
+    }
+
+    /* Adjusting the second and third layers */
+    p::after {
+      transform: skew(-2deg, -2deg) translateY(2px);
+    }
+
+    p::nth-of-type(2)::after {
+      transform: skew(2deg, 2deg) translateY(-2px);
+    }
+
+    /* Top layer - Coral Pink */
+    p::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(240, 128, 128, 0.7); /* Coral Pink with opacity 0.7 */
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 80%);
+      z-index: -2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="flexbox">
+      <p>Your text goes here. Make sure it's long enough to see the wrapping effect. Add more text to see how the highlighter effect resets for each line.</p>
+    </div>
+  </div>
