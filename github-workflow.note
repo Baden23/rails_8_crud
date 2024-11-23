@@ -1,0 +1,75 @@
+## GITHUB BRANCH WORKFLOW ##
+
+1. Create a branch: git checkout -b feature-branch.
+2. Make changes and commit: git add . / git commit -m "Message".
+3. Push the branch to GitHub: git push -u origin feature-branch.
+4. Merge into main when done: git checkout master / git pull origin main /git merge feature-branch / git push origin master
+5. Optionally delete the branch after merging: git branch -d feature-branch / git push origin --delete feature-branch
+
+
+
+### Pull base git and start developing from the core/base rails8 (rails 8, basic blog, rails 8 built-in authentication with seasions,  friendly_id) ###
+
+Yes, you've got it! Here's a quick recap of your workflow for starting new projects or features:
+
+1. Start a New Project or Feature
+
+Pull the latest version of the master branch (which is now clean and up to date).
+
+git pull origin master
+
+Create a new branch for your work:
+
+git checkout -b new-feature-branch
+
+
+2. Make Changes and Test
+
+Make your changes, run tests, and make sure everything works.
+
+
+3. Commit Your Changes
+
+Add your changes to the staging area:
+
+git add .
+
+Commit your changes with a message:
+
+git commit -m "Your commit message"
+
+
+4. Merge the Feature Branch into master
+
+Switch to the master branch:
+
+git checkout master
+
+Merge your feature branch into master:
+
+git merge new-feature-branch
+
+
+5. Push the Changes to the Remote Repository
+
+Push the master branch to the remote repository:
+
+git push origin master
+
+
+6. Clean Up
+
+Optionally, delete your feature branch after merging:
+
+git branch -d new-feature-branch
+git push origin --delete new-feature-branch
+
+
+
+---
+
+This workflow will keep your master branch clean, with a clear history of feature additions, and your remote repository will be up to date.
+
+Let me know if you need further clarifications on any steps!
+
+

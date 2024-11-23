@@ -11,3 +11,5 @@ window.Stimulus = application
 eagerLoadControllersFrom("controllers", application)
 
 export { application }
+import "trix"
+import "@rails/actiontext"
